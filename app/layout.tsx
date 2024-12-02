@@ -40,7 +40,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <main className=" mx-auto pt-5 px-2 flex-grow">
+            <main className=" mx-auto pt-5 flex-grow">
               {children}
             </main>
         </Providers>

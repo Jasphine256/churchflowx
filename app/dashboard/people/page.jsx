@@ -1,6 +1,11 @@
 'use client'
 import {Tabs, Tab, Card, CardBody, CardHeader, Button} from "@nextui-org/react";
 import MinistersView from "@components/views/MinistersView"
+import PastorsView from "@components/views/PastorsView"
+import VisitorsView from "@components/views/VisitorsView"
+import MembersView from "@components/views/MembersView"
+
+
 
 export default function PeopleTabs() {
   let tabs = [
@@ -12,17 +17,17 @@ export default function PeopleTabs() {
     {
       id: "members",
       label: "Members",
-      content: (<MinistersView/>)
+      content: (<MembersView/>)
     },
     {
       id: "visitors",
       label: "Visitors",
-      content: (<MinistersView/>)
+      content: (<VisitorsView/>)
     },
     {
       id: "pastors",
       label: "Pastors",
-      content: (<MinistersView/>)
+      content: (<PastorsView/>)
     }
   ];
 

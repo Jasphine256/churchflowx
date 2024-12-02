@@ -1,22 +1,25 @@
 'use client'
 import {Tabs, Tab, Card, CardBody, CardHeader, Button} from "@nextui-org/react";
+import TaskList from "@components/lists/TaskList"
+import PlansList from "@components/lists/PlansList"
+import ProjectsList from "@components/lists/ProjectsList"
 
 export default function CollectionsTabs() {
   let tabs = [
     {
       id: "tasks",
       label: "Tasks",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      content: (<TaskList/>)
     },
     {
       id: "plans",
       label: "Plans",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      content: (<PlansList/>)
     },
     {
       id: "projects",
       label: "projects",
-      content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      content: (<ProjectsList/>)
     },
   ];
 
