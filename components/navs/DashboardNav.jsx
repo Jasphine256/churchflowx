@@ -93,12 +93,28 @@ export default function DashboardNav() {
 
       const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+
       const menuItems = [
-        "Home",
-        "Dashboard",
-        "People",
-        "Collections",
-        "Finance",
+        {
+            item: "Home",
+            url: "/",
+        },
+        // {
+        //     item: "Overview",
+        //     url: "/dashboard",
+        // },
+        {
+            item: "People",
+            url: "/dashboard/people",
+        },
+        {
+            item: "Collections",
+            url: "/dashboard/collections",
+        },
+        {
+            item: "Finance",
+            url: "/dashboard/finance",
+        },
       ];
 
   return (
@@ -118,9 +134,9 @@ export default function DashboardNav() {
         <NavbarItem>
             <Link href="/" isBlock color="foreground">Home</Link>
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
             <Link href="/dashboard" isBlock color="foreground">Overview</Link>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
             <Link href="/dashboard/people" isBlock color="foreground">People</Link>
         </NavbarItem>
@@ -134,24 +150,13 @@ export default function DashboardNav() {
       </NavbarContent>
 
         <NavbarContent as="div" justify="end">
-        {
-            session?.user ? (
-                <NavbarItem>
-                    <Button onClick={()=>signOut({callbackUrl:'/'})} color="primary" variant="flat">Sign Out</Button>
-                </NavbarItem>
-            ):(
-                <NavbarItem>
-                    <Button onClick={() => {signIn}} color="primary" variant="flat">Sign In</Button>
-                </NavbarItem>
-            )
-        }
         <Dropdown placement="bottom-end">
             <DropdownTrigger>
             <Avatar
                 isBordered
                 as="button"
                 className="transition-transform"
-                color="secondary"
+                color="success"
                 name="Jason Hughes"
                 size="sm"
                 src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
@@ -162,11 +167,11 @@ export default function DashboardNav() {
                     <p className="font-semibold">Signed in as</p>
                     <p className="font-semibold">zoey@example.com</p>
                 </DropdownItem>
-                <DropdownItem key="team_settings" as={Link} href="/dashboard">Dashboard</DropdownItem>
+                {/* <DropdownItem key="team_settings" as={Link} href="/dashboard" className="text-white" >Overview</DropdownItem> */}
                 <DropdownItem key="analytics">Settings</DropdownItem>
                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                 <DropdownItem key="signout">
-                    <Button onClick={()=>signOut({callbackUrl:'/'})} color="primary" variant="flat">Sign Out</Button>
+                    <Button onClick={()=>signOut({callbackUrl:'/'})} color="danger" variant="flat">Sign Out</Button>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>
@@ -174,15 +179,15 @@ export default function DashboardNav() {
 
       <NavbarMenu>
         {
-        menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+        menuItems.map((item) => (
+          <NavbarMenuItem key={`${item.item}`}>
             <Link
               color="foreground"
               className="w-full"
-              href="#"
+              href={item.url}
               size="lg"
             >
-              {item}
+              {item.item}
             </Link>
           </NavbarMenuItem>
         ))
