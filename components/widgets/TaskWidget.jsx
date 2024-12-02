@@ -12,7 +12,7 @@ export default function TaskWidget({task}) {
             <CardFooter>
                 <div className="w-full flex flex-row justify-between items-center">
                     <Chip variant="bordered" radius="sm" color="primary">{task.startDate} : TO : {task.endDate}</Chip>
-                    <Chip color={(task.status === 'finished') ? "primary" : "danger"} variant="dot">{task.status}</Chip>
+                    <Chip color={(task.status === 'finished') ? "warning" : "danger"} variant="dot">{task.status}</Chip>
                 </div>
             </CardFooter>
         </Card>  
