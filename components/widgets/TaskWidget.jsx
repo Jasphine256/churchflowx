@@ -1,5 +1,3 @@
-'use client'
-
 import {Card, CardBody, CardFooter, Chip} from "@nextui-org/react";
 
 export default function TaskWidget({task}) {

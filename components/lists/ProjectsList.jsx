@@ -1,4 +1,3 @@
-'use client'
 import ProjectWidget from "../widgets/ProjectWidget"
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react"
 

@@ -1,3 +1,4 @@
+"use client"
 import {Input, DatePicker, Card, CardBody, CardHeader, CardFooter, Button} from "@nextui-org/react";
 import * as React from "react"
 
