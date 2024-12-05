@@ -1,3 +1,5 @@
+"use client"
+
 import TaskWidget from "../widgets/TaskWidget"
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react"
 

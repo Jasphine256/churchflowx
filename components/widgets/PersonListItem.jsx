@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardHeader, CardBody, Avatar, Snippet } from "@nextui-org/react";
 import Link from "next/link";
 

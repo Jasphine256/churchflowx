@@ -1,3 +1,5 @@
+"use client"
+
 import {Card, CardHeader, CardBody, Image, Link} from "@nextui-org/react";
 
 export default function Feature({name, subtitle, url, icon}) {

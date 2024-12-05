@@ -1,3 +1,5 @@
+"use client"
+
 import PlanWidget from "../widgets/PlanWidget"
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react"
 

@@ -1,3 +1,5 @@
+"use client"
+
 import {Listbox, ListboxItem, Divider} from "@nextui-org/react";
 import PersonListItem from "../widgets/PersonListItem";
 
