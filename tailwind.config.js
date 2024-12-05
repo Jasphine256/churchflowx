@@ -1,7 +1,7 @@
-import {nextui} from '@nextui-org/theme'
+import {nextui} from '@nextui-org/react'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config  = {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,12 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
-      },
     },
   },
   darkMode: "class",
   plugins: [nextui()],
 }
+
+export default config;
