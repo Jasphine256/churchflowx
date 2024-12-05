@@ -56,7 +56,7 @@ export default function ProjectsList() {
                 startContent={
                     <Avatar radius="sm" src="https://img.icons8.com/windows/32/project.png"/>
                 }
-                subtitle={project.handler}
+                subtitle={`HANDLER: ${project.handler}`}
                 title={project.title}
                 >
                 <ProjectWidget project={project}/>

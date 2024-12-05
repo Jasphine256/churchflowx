@@ -56,7 +56,7 @@ export default function PlansList() {
                 startContent={
                     <Avatar radius="sm" src="https://img.icons8.com/ios-glyphs/30/checklist.png"/>
                 }
-                subtitle={plan.handler}
+                subtitle={`HANDLER: ${plan.handler}`}
                 title={plan.title}
                 >
                 <PlanWidget plan={plan}/>

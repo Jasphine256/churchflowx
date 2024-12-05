@@ -1,8 +1,18 @@
 'use client'
-import {Tabs, Tab, Card, CardBody, CardHeader, Button} from "@nextui-org/react";
+import {
+  Tabs, Tab,
+  Card, CardBody, CardHeader,
+  Button,
+  Modal, ModalHeader, ModalFooter, ModalContent, ModalBody, useDisclosure
+} from "@nextui-org/react";
+
 import TaskList from "@components/lists/TaskList"
 import PlansList from "@components/lists/PlansList"
 import ProjectsList from "@components/lists/ProjectsList"
+import FundForm from "@components/forms/FundForm";
+import TaskForm from "@components/forms/TaskForm"
+import PlanForm from "@components/forms/PlanForm"
+import ProjectForm from "@components/forms/ProjectForm"
 
 export default function CollectionsTabs() {
   let tabs = [
@@ -23,6 +33,41 @@ export default function CollectionsTabs() {
     },
   ];
 
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+
+  const CollectionsModal = () => {  
+    return (
+      <>
+        <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="full" scrollBehavior="inside">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">Add new record</ModalHeader>
+                <ModalBody>
+                <Tabs radius="full" color="warning">
+                  <Tab key={'task-form'} title="Task">
+                    <TaskForm/>
+                  </Tab>  
+                  <Tab key={'plan-form'} title="Plan">
+                    <PlanForm/>
+                  </Tab>
+                  <Tab key={'project-form'} title="Project">
+                    <ProjectForm/>
+                  </Tab>  
+                </Tabs>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" variant="light" onPress={onClose}>Close</Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </>
+    );
+  }
+
   return (
     <div className="flex w-full flex-col">
       <Tabs aria-label="Dynamic tabs" items={tabs} variant="underlined">
@@ -30,7 +75,7 @@ export default function CollectionsTabs() {
           <Tab key={item.id} title={item.label}>
             <Card isBlurred={true} fullWidth={true}>
             <CardHeader>
-                <Button variant="ghost" color="success" onClick={()=>{}}>Add New</Button>
+                <Button variant="ghost" color="success" onClick={onOpen}>Add New</Button>
               </CardHeader>
               <CardBody>
                 {item.content}
@@ -39,6 +84,7 @@ export default function CollectionsTabs() {
           </Tab>
         )}
       </Tabs>
+      <CollectionsModal/>
     </div>  
   );
 }

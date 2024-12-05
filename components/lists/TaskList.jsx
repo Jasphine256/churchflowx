@@ -61,7 +61,7 @@ export default function TaskList() {
                 startContent={
                     <Avatar radius="sm" src="https://img.icons8.com/material-outlined/24/task-completed.png"/>
                 }
-                subtitle={task.handler}
+                subtitle={`HANDLER: ${task.handler}`}
                 title={task.title}
                 >
                 <TaskWidget task={task}/>
