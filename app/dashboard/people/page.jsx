@@ -10,7 +10,10 @@ import VisitorsView from "@components/views/VisitorsView"
 import MembersView from "@components/views/MembersView"
 
 import FundForm from "@components/forms/FundForm";
-
+import MemberForm from "@components/forms/MemberForm"
+import MinisterForm from "@components/forms/MinisterForm"
+import PastorForm from "@components/forms/PastorForm"
+import VisitorForm from "@components/forms/VisitorForm"
 
 
 export default function PeopleTabs() {
@@ -51,16 +54,16 @@ export default function PeopleTabs() {
                 <ModalBody>
                 <Tabs radius="full" color="warning">
                   <Tab key={'member-form'} title="Member">
-                    <FundForm/>
+                    <MemberForm/>
                   </Tab>  
                   <Tab key={'minister-form'} title="Minister">
-                    <FundForm/>
+                    <MinisterForm/>
                   </Tab>
                   <Tab key={'visitor-form'} title="Visitor">
-                    <FundForm/>
+                    <VisitorForm/>
                   </Tab>  
                   <Tab key={'pastor-form'} title="Pastor">
-                    <FundForm/>
+                    <PastorForm/>
                   </Tab>
                 </Tabs>
                 </ModalBody>
