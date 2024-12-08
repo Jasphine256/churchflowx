@@ -16,12 +16,10 @@ import {
     Avatar
 } from "@nextui-org/react";
 
-import {useSession, signOut, signIn} from "next-auth/react"
 import * as React from "react"
+import { UserAuth } from "@utils/auth-provider";
 
 export default function DashboardNav() {
-
-    const {data:session} = useSession()
 
     const DROP_DOWNS = [
         { 
@@ -93,6 +91,17 @@ export default function DashboardNav() {
 
       const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+      const {user, googleSignOut} = UserAuth()
+
+      
+    const signOut = async () => {
+        try {
+          await googleSignOut()
+        } catch (error) {
+          console.log(error)
+        }
+      }
+  
 
       const menuItems = [
         {
@@ -171,7 +180,7 @@ export default function DashboardNav() {
                 <DropdownItem key="analytics">Settings</DropdownItem>
                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                 <DropdownItem key="signout">
-                    <Button onClick={()=>signOut({callbackUrl:'/'})} color="danger" variant="flat">Sign Out</Button>
+                    <Button onClick={signOut()} color="danger" variant="flat">Sign Out</Button>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>

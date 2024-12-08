@@ -16,12 +16,28 @@ import {
     Avatar
 } from "@nextui-org/react";
 
-import {useSession, signOut, signIn} from "next-auth/react"
 import * as React from "react"
+import { UserAuth } from "@utils/auth-provider";
 
 export default function NavBar() {
 
-    const {data:session} = useSession()
+    const {user, googleSignIn, googleSignOut} = UserAuth()
+
+    const signIn = async () => {
+        try {
+          await googleSignIn()
+        } catch (error) {
+          console.log(error)
+        }
+    }
+
+    const signOut = async () => {
+      try {
+        await googleSignOut()
+      } catch (error) {
+        console.log(error)
+      }
+    }
 
     const navigation = [
         { name: 'Home', href: '/', current: true },
@@ -66,15 +82,17 @@ export default function NavBar() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {
             navigation.map((item) => (
+              <div key={item.href}>
                 <NavbarItem>
                     <Link color="foreground" href={item.href}>{item.name}</Link>
                 </NavbarItem>
+              </div>
             ))
         }
         {
-            session?.user ? (
+            user ? (
                 <NavbarItem>
-                    <Link color="foreground" href="/dashboard">Dashboard</Link>
+                    <Link color="foreground" href="/dashboard/people">Dashboard</Link>
                 </NavbarItem>
             ):(<> </>)
         }
@@ -83,16 +101,16 @@ export default function NavBar() {
 
         <NavbarContent as="div" justify="end">
         {
-            session?.user ? (
+            user ? (
                 <></>
             ):(
                 <NavbarItem>
-                    <Button onClick={() => {signIn}} color="primary" variant="flat">Sign In</Button>
+                    <Button onPress={()=>signIn()} color="primary" variant="flat">Sign In</Button>
                 </NavbarItem>
             )
         }
         {
-          session?.user ? (
+          user ? (
             <Dropdown placement="bottom-end">
               <DropdownTrigger>
               <Avatar
@@ -113,35 +131,12 @@ export default function NavBar() {
                   <DropdownItem key="team_settings" as={Link} href="/dashboard/people" className="text-white">Dashboard</DropdownItem>
                   <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                   <DropdownItem key="signout">
-                      <Button onClick={()=>signOut({callbackUrl:'/'})} color="danger" variant="flat">Sign Out</Button>
+                      <Button onClick={signOut} color="danger" variant="flat">Sign Out</Button>
                   </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           ):(
-            <Dropdown placement="bottom-end">
-              <DropdownTrigger>
-              <Avatar
-                  isBordered
-                  as="button"
-                  className="transition-transform"
-                  color="secondary"
-                  name="Jason Hughes"
-                  size="sm"
-                  src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-              />
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Profile Actions" variant="flat">
-                  <DropdownItem key="profile" className="h-14 gap-2">
-                      <p className="font-semibold">Signed in as</p>
-                      <p className="font-semibold">zoey@example.com</p>
-                  </DropdownItem>
-                  <DropdownItem key="team_settings" as={Link} href="/dashboard/people" className="text-white">Dashboard</DropdownItem>
-                  <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-                  <DropdownItem key="signout">
-                      <Button onClick={()=>signOut({callbackUrl:'/'})} color="danger" variant="flat">Sign Out</Button>
-                  </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            <></>
           )
         }
 
@@ -163,7 +158,7 @@ export default function NavBar() {
           ))
         }
         {
-          session?.user ? (
+          user ? (
             <NavbarMenuItem key={"dashboard"}>
             <Link
             color="foreground"

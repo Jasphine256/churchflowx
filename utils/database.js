@@ -2,7 +2,7 @@
 import { collection, doc, addDoc, getDoc, getDocs , updateDoc, deleteDoc} from "firebase/firestore";
 import { query, where } from "firebase/firestore";
 
-import { db } from "./firebase";
+import { db } from "./firebase-config"
 
 // Function to add a document
 export const addDocument = async (collection_name, object) => {

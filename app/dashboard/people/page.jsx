@@ -9,14 +9,15 @@ import PastorsView from "@components/views/PastorsView"
 import VisitorsView from "@components/views/VisitorsView"
 import MembersView from "@components/views/MembersView"
 
-import FundForm from "@components/forms/FundForm";
 import MemberForm from "@components/forms/MemberForm"
 import MinisterForm from "@components/forms/MinisterForm"
 import PastorForm from "@components/forms/PastorForm"
 import VisitorForm from "@components/forms/VisitorForm"
 
+import { UserAuth } from "@utils/auth-provider"; 
 
 export default function PeopleTabs() {
+
   let tabs = [
     {
       id: "ministers",
@@ -40,6 +41,8 @@ export default function PeopleTabs() {
     }
   ];
 
+  const {user} = UserAuth()
+   
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
 
