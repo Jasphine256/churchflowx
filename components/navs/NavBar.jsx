@@ -4,9 +4,8 @@ import {Avatar} from "@nextui-org/avatar"
 import {Navbar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, NavbarBrand, NavbarItem} from "@nextui-org/navbar"
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/dropdown"
 import * as React from "react"
-import { useSession } from "next-auth/react";
-import SignInBtn from "@components/SignInBtn"
-import SignOutBtn from "@components/SignOutBtn"
+import { useSession, signIn, signOut } from "next-auth/react";
+import { Button } from "@nextui-org/button"
 
 export default function NavBar() {
 
@@ -74,7 +73,7 @@ export default function NavBar() {
                 <></>
             ):(
                 <NavbarItem>
-                    <SignInBtn/>
+                    <Button variant="flat" color="primary" radius="sm" onPress={signIn}>Sign In</Button>
                 </NavbarItem>
             )
         }
@@ -101,7 +100,7 @@ export default function NavBar() {
                   <DropdownItem key="team_settings" as={Link} href="/dashboard/people" className="text-white">Dashboard</DropdownItem>
                   <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                   <DropdownItem key="signout">
-                      <SignOutBtn/>
+                    <Button variant="flat" color="danger" radius="sm" onPress={signOut}>Sign Out</Button>
                   </DropdownItem>
               </DropdownMenu>
             </Dropdown>

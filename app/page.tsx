@@ -3,32 +3,36 @@
 import NavBar from "@components/navs/NavBar"
 import Feature from "@components/widgets/Feature"
 import { Button } from "@nextui-org/button"
+import Link from "next/link"
+
+import {useSession, signIn} from "next-auth/react"
 
 const Home = () => {
+  const {data:session} = useSession()
   const features = [
     {
+      name: 'Secure Access',
+      subtitle: "Securely access your data anywhere",
+      url: '/features#broadcast-info',
+      icon: '/assets/images/access.jpg',
+    },
+    {
       name: 'Databases',
-      subtitle: "simple subtitle",
+      subtitle: "simply store and manage church information",
       url: '/features#databases-info',
-      icon: '/assets/icons/database.png',
+      icon: '/assets/images/database.jpg',
+    },
+    {
+      name: 'Project Management',
+      subtitle: "assign tasks, manage plans and projects",
+      url: '/features#projects-info',
+      icon: '/assets/images/projects.jpg',
     },
     {
       name: 'Finance',
-      subtitle: "simple subtitle",
+      subtitle: "store and manage financial records",
       url: '/features#finances-info',
-      icon: '/assets/icons/finance.png',
-    },
-    {
-      name: 'Broadcast',
-      subtitle: "simple subtitle",
-      url: '/features#broadcast-info',
-      icon: '/assets/icons/message.png',
-    },
-    {
-      name: 'Projects',
-      subtitle: "simple subtitle",
-      url: '/features#projects-info',
-      icon: '/assets/icons/project.png',
+      icon: '/assets/images/finance.jpg',
     },
   ]
   return (
@@ -39,7 +43,13 @@ const Home = () => {
         <h1 className="text-4xl font-bold p-3">Simplifying God's work</h1>
         <h3 className="text-lg p-1">Managing Plans, Projects, Staff, Finances, scheduling tasks</h3>
         <h3 className="text-lg p-1 mb-5">backed up database, broadcast messages and lots more</h3>
-        <Button onClick={() => {}} color="primary" radius="full" variant="bordered">{"Get Started For Free >>> "}</Button>
+        {
+          session?.user ? (
+            <Button  as={Link} href="/dashboard/people" color="primary" radius="full" variant="bordered">{"Go To Dashboard >>> "}</Button>
+          ):(
+            <Button color="primary" radius="full" variant="bordered" onPress={()=>{signIn()}}>{"Get Started For Free >>> "}</Button>            
+          )
+        }
       </section>
 
       <section className="w-full p-2 flex flex-row flex-warp items-center justify-evenly overflow-x-scroll">

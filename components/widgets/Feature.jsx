@@ -14,7 +14,7 @@ export default function Feature({name, subtitle, url, icon}) {
         <Image
           alt="Card background"
           className="object-cover rounded-xl"
-          src="https://nextui.org/images/hero-card-complete.jpeg"
+          src={icon}
           width={270}
         />
       </CardBody>

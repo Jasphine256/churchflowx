@@ -5,8 +5,9 @@ import {Navbar, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent, Nav
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/dropdown"
 
 import * as React from "react"
-import { useSession } from "next-auth/react";
-import SignOutBtn from "@components/SignOutBtn"
+import { useSession, signOut } from "next-auth/react";
+import { Button } from "@nextui-org/button"
+
 export default function DashboardNav() {
 
       const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -32,6 +33,11 @@ export default function DashboardNav() {
         },
       ];
 
+      const signUersOut = () => {
+        signOut({ callbackUrl: "/" }); // Redirect to the homepage after signing out
+      };
+      
+      
   return (
     <Navbar isBordered={true}>
 
@@ -81,16 +87,15 @@ export default function DashboardNav() {
             />
             </DropdownTrigger>
             <DropdownMenu aria-label="Profile Actions" variant="flat">
-                <DropdownItem key="profile" className="h-14 gap-2">
+                <DropdownItem key="profile">
                     <p className="font-bold py-1 text-lg">Signed In As</p>
                     <p className="font-semibold py-1 text-md">{session.user.name}</p>
                     <p className="font-thin py-1 text-sm">{session.user.email}</p>
                 </DropdownItem>
-                {/* <DropdownItem key="team_settings" as={Link} href="/dashboard" className="text-white" >Overview</DropdownItem> */}
                 <DropdownItem key="analytics">Settings</DropdownItem>
                 <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
                 <DropdownItem key="signout">
-                    <SignOutBtn/>
+                  <Button variant="flat" color="danger" radius="sm" onPress={signUersOut}>Sign Out</Button>
                 </DropdownItem>
             </DropdownMenu>
         </Dropdown>
