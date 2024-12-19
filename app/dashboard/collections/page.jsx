@@ -9,7 +9,6 @@ import {
 import TaskList from "@components/lists/TaskList"
 import PlansList from "@components/lists/PlansList"
 import ProjectsList from "@components/lists/ProjectsList"
-import FundForm from "@components/forms/FundForm";
 import TaskForm from "@components/forms/TaskForm"
 import PlanForm from "@components/forms/PlanForm"
 import ProjectForm from "@components/forms/ProjectForm"
@@ -28,7 +27,7 @@ export default function CollectionsTabs() {
     },
     {
       id: "projects",
-      label: "projects",
+      label: "Projects",
       content: (<ProjectsList/>)
     },
   ];
@@ -75,7 +74,7 @@ export default function CollectionsTabs() {
           <Tab key={item.id} title={item.label}>
             <Card isBlurred={true} fullWidth={true}>
             <CardHeader>
-                <Button variant="ghost" color="success" onClick={onOpen}>Add New</Button>
+                <Button variant="ghost" color="success" radius="sm" onPress={onOpen}>Add New</Button>
               </CardHeader>
               <CardBody>
                 {item.content}

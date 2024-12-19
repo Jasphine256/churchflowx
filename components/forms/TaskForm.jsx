@@ -74,7 +74,7 @@ export default function TaskForm() {
         setHeaderMessage("Start Date cannot be empty");
       } else if (!dateDue) {
         setHeaderMessage("Due Date cannot be empty");
-      } else if (status.size === 0) {
+      } else if (!status) {
         setHeaderMessage("Status must be selected");
       } else {
         setHeaderMessage("Submitting...");
@@ -87,11 +87,11 @@ export default function TaskForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Title" description="name the task" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
-            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the task" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
+            <Input type="text" labelPlacement="outside" label="Title" description="name the task" onChange={setTitle} radius="sm"  variant="underlined" isRequired />
+            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the task" onChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
             <DatePicker label="Start Date" description="task assigned on ?" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
-            <DatePicker label="Start Date" description="task finished by ?" onChange={setDateDue} className="pt-6" radius="sm" isRequired validate={true} />
-            <RadioGroup label={"Set Status"} value={status} onValueChange={setStatus} className="pt-3">
+            <DatePicker label="Date Due" description="task finished by ?" onChange={setDateDue} className="pt-6" radius="sm" isRequired validate={true} />
+            <RadioGroup label={"Set Status"} value={status} onChange={setStatus} className="pt-3">
                 <Radio value={"finished"} description="the task is completed" color="success">Finished</Radio>
                 <Radio value={"pending"} description="the task is in execution" color="primary">Pending</Radio>
             </RadioGroup>

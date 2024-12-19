@@ -77,9 +77,9 @@ export default function FundForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Name" description="funds from" onValueChange={setName} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Reason" description="reason for funding" onValueChange={setReason} radius="sm" variant="underlined" isRequired isClearable={true}/>
-            <Input type="text" labelPlacement="outside" label="Amount" description="amount recieved" onValueChange={setAmount} radius="sm" variant="bordered" isRequired />
+            <Input type="text" labelPlacement="outside" label="Name" description="funds from" onChange={setName} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Reason" description="reason for funding" onChange={setReason} radius="sm" variant="underlined" isRequired isClearable={true}/>
+            <Input type="text" labelPlacement="outside" label="Amount" description="amount recieved" onChange={setAmount} radius="sm" variant="bordered" isRequired />
             <DatePicker label="Funding Date" description="date of funding" onChange={setDate} className="pt-6" radius="sm" isRequired validate={true} />
         </CardBody>
         <CardFooter>

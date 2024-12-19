@@ -77,9 +77,9 @@ export default function PaymentForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Name" description="paying to" onValueChange={setName} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Reason" description="reason for payment" v onValueChange={setReason} radius="sm" variant="underlined" isRequired isClearable={true}/>
-            <Input type="text" labelPlacement="outside" label="Amount" description="amount paid" v onValueChange={setAmount} radius="sm" variant="bordered" isRequired />
+            <Input type="text" labelPlacement="outside" label="Name" description="paying to" onChange={setName} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Reason" description="reason for payment" onChange={setReason} radius="sm" variant="underlined" isRequired isClearable={true}/>
+            <Input type="text" labelPlacement="outside" label="Amount" description="amount paid" onChange={setAmount} radius="sm" variant="bordered" isRequired />
             <DatePicker label="Payment Date" description="date of payment" onChange={setDate} className="pt-6" radius="sm" isRequired validate={true} />
         </CardBody>
         <CardFooter>

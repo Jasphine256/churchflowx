@@ -146,27 +146,27 @@ export default function MemberForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Full Names" description="first and last name" onValueChange={setName} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Full Names" description="first and last name" onChange={setName} radius="sm"  variant="underlined" isRequired />
             <DatePicker label="Date" description="date joined" onChange={setDate} className="pt-6" radius="sm" isRequired validate={true} />
-            <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onValueChange={setTel} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Email" description="email address" onValueChange={setEmail} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onChange={setTel} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Email" description="email address" onChange={setEmail} radius="sm"  variant="underlined" isRequired />
             <DatePicker label="DOB" description="date of birth" onChange={setDob} className="pt-6" radius="sm" isRequired validate={true} />
-            <Input type="text" labelPlacement="outside" label="Education" description="highest level" onValueChange={setEduc} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Occupation" description="work field" onValueChange={setOccupation} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Where" description="work location" onValueChange={setWhere} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Zone" description="zone address" onValueChange={setZone} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Village" description="village address" onValueChange={setVillage} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Parish" description="parish addresh" onValueChange={setParish} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Subcounty" description="subcounty address" onValueChange={setSubcounty} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Former Religion" description="recent domination" onValueChange={setFormerReligion} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Marital Status" description="marital status" onValueChange={setMaritalStatus} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Children" description="number of children" onValueChange={setChildren} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Father's Name" description="father's name" onValueChange={setFather} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Mother's Name" description="mother's name" onValueChange={setMother} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Home Village" description="home village" onValueChange={setHomeVillage} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Home Parish" description="home parish" onValueChange={setHomeParish} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Home SubCounty" description="home subcounty" onValueChange={setHomeSubCounty} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Home District" description="home district" onValueChange={setHomeDistrict} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Education" description="highest level" onChange={setEduc} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Occupation" description="work field" onChange={setOccupation} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Where" description="work location" onChange={setWhere} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Zone" description="zone address" onChange={setZone} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Village" description="village address" onChange={setVillage} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Parish" description="parish addresh" onChange={setParish} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Subcounty" description="subcounty address" onChange={setSubcounty} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Former Religion" description="recent domination" onChange={setFormerReligion} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Marital Status" description="marital status" onChange={setMaritalStatus} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Children" description="number of children" onChange={setChildren} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Father's Name" description="father's name" onChange={setFather} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Mother's Name" description="mother's name" onChange={setMother} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Home Village" description="home village" onChange={setHomeVillage} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Home Parish" description="home parish" onChange={setHomeParish} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Home SubCounty" description="home subcounty" onChange={setHomeSubCounty} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Home District" description="home district" onChange={setHomeDistrict} radius="sm"  variant="underlined" isRequired />
 
         </CardBody>
         <CardFooter>

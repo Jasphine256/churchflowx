@@ -88,9 +88,9 @@ export default function ProjectForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Title" description="name the project" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Title" description="name the project" onChange={setTitle} radius="sm"  variant="underlined" isRequired />
             <Textarea type="text" labelPlacement="inside" label="Description" description="describe the projecct" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
-            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onValueChange={setHandler} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onChange={setHandler} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Budget" description="expense for project execution" onValueChange={setBudget} radius="sm" isRequired />
             <DatePicker label="Start Date" description="project started on" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
             <DatePicker label="End Date" description="project ended on (optional)" onChange={setEndDate} className="pt-6" radius="sm" validate={true} />

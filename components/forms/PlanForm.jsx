@@ -82,11 +82,11 @@ export default function PlanForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Title" description="name the plan" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Title" description="name the plan" onChange={setTitle} radius="sm"  variant="underlined" isRequired />
             <Textarea type="text" labelPlacement="inside" label="Description" description="describe the plan" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
-            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onValueChange={setHandler} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onChange={setHandler} radius="sm"  variant="underlined" isRequired />
             <Textarea type="text" labelPlacement="inside" label="Team Members" description="people to handle the plan" onValueChange={setTeam} radius="sm" isRequired isClearable={true} className="pt-3"/>
-            <Input type="text" labelPlacement="outside" label="Budget" description="expense for plan execution" onValueChange={setBudget} radius="sm" isRequired />
+            <Input type="text" labelPlacement="outside" label="Budget" description="expense for plan execution" onChange={setBudget} radius="sm" isRequired />
         </CardBody>
         <CardFooter>
             <Button color="primary" fullWidth radius="sm" onPress={validateAndSubmit}>Save Plan</Button>

@@ -79,10 +79,10 @@ export default function PastorForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Full Names" description="first and last name" onValueChange={setName} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onValueChange={setTel} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Email" description="email address" onValueChange={setEmail} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Home District" description="home district" onValueChange={setHomeDistrict} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Full Names" description="first and last name" onChange={setName} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onChange={setTel} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Email" description="email address" onChange={setEmail} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Home District" description="home district" onChange={setHomeDistrict} radius="sm"  variant="underlined" isRequired />
 
         </CardBody>
         <CardFooter>
