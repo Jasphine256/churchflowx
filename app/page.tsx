@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <>
       <NavBar/>
-      <section className="mt-2 w-full flex flex-col items-center justify-center p-10 ">
+      <section className="w-full flex flex-col items-center justify-center p-10 py-4 ">
         <h1 className="text-4xl font-bold p-3">The Free Ultimate Church Management System</h1>
         <h1 className="text-4xl font-bold p-3">Simplifying God's work</h1>
         <h3 className="text-lg p-1">Managing Plans, Projects, Staff, Finances, scheduling tasks</h3>
