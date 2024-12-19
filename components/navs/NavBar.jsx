@@ -47,7 +47,7 @@ export default function NavBar() {
             </NavbarBrand>
         </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      {/* <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {
             navigation.map((item) => (
               <div key={item.href}>
@@ -65,7 +65,7 @@ export default function NavBar() {
             ):(<> </>)
         }
 
-      </NavbarContent>
+      </NavbarContent> */}
 
         <NavbarContent as="div" justify="end">
         {

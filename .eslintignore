@@ -20,3 +20,4 @@ build
 !tsup.config.ts
 components
 app
+auth.js

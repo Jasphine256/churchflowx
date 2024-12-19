@@ -1,7 +1,7 @@
 "use client"
 import {CardBody, Card, CardFooter, CardHeader} from "@nextui-org/card"
 import {Input} from "@nextui-org/input"
-import {DatePicker} from "@nextui-org/date-picker"
+import {DateInput} from "@nextui-org/date-input"
 import {Button} from "@nextui-org/button"
 import { useSession } from "next-auth/react"
 import * as React from "react"
@@ -156,12 +156,12 @@ export default function MinisterForm() {
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
             <Input type="text" labelPlacement="outside" label="Full Names" description="first and last name" onChange={setName} radius="sm"  variant="underlined" isRequired />
-            <DatePicker label="Date" description="date joined" onChange={setDate} className="pt-6" radius="sm" isRequired validate={true} />
+            <DateInput label="Date" description="date joined" onChange={setDate} className="pt-6" radius="sm" isRequired validate={true} />
             <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onChange={setTel} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Email" description="email address" onChange={setEmail} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Ministry" description="ministry" onChange={setMinistry} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Role" description="role played in ministry" onChange={setRole} radius="sm"  variant="underlined" isRequired />
-            <DatePicker label="DOB" description="date of birth" onChange={setDob} className="pt-6" radius="sm" isRequired validate={true} />
+            <DateInput label="DOB" description="date of birth" className="pt-6" radius="sm" isRequired validate={true} />
             <Input type="text" labelPlacement="outside" label="Education" description="highest level" onChange={setEduc} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Occupation" description="work field" onChange={setOccupation} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Where" description="work location" onChange={setWhere} radius="sm"  variant="underlined" isRequired />
@@ -181,7 +181,7 @@ export default function MinisterForm() {
 
         </CardBody>
         <CardFooter>
-            <Button color="primary" fullWidth radius="sm" onPress={validateAndSubmit}>Save Minister</Button>
+            <Button color="primary" fullWidth radius="sm" onPress={()=>{validateAndSubmit()}}>Save Minister</Button>
         </CardFooter>
     </Card>
   );

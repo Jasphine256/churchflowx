@@ -10,9 +10,6 @@ const withPWAConfig = {
 
 // Define Next.js configuration
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: [],
-  },
   webpack(config) {
     config.experiments = { ...config.experiments, topLevelAwait: true };
 

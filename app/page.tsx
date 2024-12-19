@@ -55,7 +55,7 @@ const Home = () => {
       <section className="w-full p-2 flex flex-row flex-warp items-center justify-evenly overflow-x-scroll">
         {
           features.map((feature)=>(
-            <div className="min-w-[280px] w-full lg:w-1/4 m-4" key={feature.name}>
+            <div className="min-w-[280px] w-full lg:w-1/4 m-2" key={feature.name}>
               <Feature name={feature.name} subtitle={feature.subtitle} url={feature.url} icon={feature.icon}/>
             </div>
           ))
