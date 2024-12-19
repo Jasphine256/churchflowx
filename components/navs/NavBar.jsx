@@ -9,39 +9,33 @@ import { Button } from "@nextui-org/button"
 
 export default function NavBar() {
 
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
-    const navigation = [
-        { name: 'Home', href: '/', current: true },
-        { name: "Features", href:'/features', current: false},
-        { name: 'About', href: '/about', current: false },
-      ]
+      // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-      const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-      const menuItems = [
-        {
-            item: "Home",
-            url: "/",
-        },
-        {
-            item: "Features",
-            url: "/features",
-        },
-        {
-            item: "About",
-            url: "/about",
-        },
-      ];
+      // const menuItems = [
+      //   {
+      //       item: "Home",
+      //       url: "/",
+      //   },
+      //   {
+      //       item: "Features",
+      //       url: "/features",
+      //   },
+      //   {
+      //       item: "About",
+      //       url: "/about",
+      //   },
+      // ];
 
   return (
     <Navbar isBordered={true}>
 
         <NavbarContent>
-            <NavbarMenuToggle
+            {/* <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             className="sm:hidden"
-            />
+            /> */}
             <NavbarBrand>
                 <p className="font-bold text-inherit text-xl">ChurchFlow</p>
             </NavbarBrand>
@@ -111,7 +105,7 @@ export default function NavBar() {
 
         </NavbarContent>
 
-      <NavbarMenu>
+      {/* <NavbarMenu>
         {
           menuItems.map((item) => (
             <NavbarMenuItem key={`${item.item}`}>
@@ -140,7 +134,7 @@ export default function NavBar() {
             </NavbarMenuItem>
           ):(<></>)
         }
-      </NavbarMenu>
+      </NavbarMenu> */}
     </Navbar>
   );
 }

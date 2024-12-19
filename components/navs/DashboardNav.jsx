@@ -92,8 +92,8 @@ export default function DashboardNav() {
                     <p className="font-semibold py-1 text-md">{session.user.name}</p>
                     <p className="font-thin py-1 text-sm">{session.user.email}</p>
                 </DropdownItem>
-                <DropdownItem key="analytics">Settings</DropdownItem>
-                <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+                {/* <DropdownItem key="analytics">Settings</DropdownItem>
+                <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem> */}
                 <DropdownItem key="signout">
                   <Button variant="flat" color="danger" radius="sm" onPress={signUersOut}>Sign Out</Button>
                 </DropdownItem>
