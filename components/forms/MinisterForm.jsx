@@ -65,6 +65,7 @@ export default function MinisterForm() {
         HomeSubCounty: homeSubCounty,
         HomeDistrict: homeDistrict,
       };
+      console.log(new_minister)
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -74,6 +75,7 @@ export default function MinisterForm() {
           },
           body: JSON.stringify(new_minister),
         });
+        console.log(response.json())
         if (response.status !== 201) {
           alert("Error saving minister data");
         }
@@ -146,8 +148,8 @@ export default function MinisterForm() {
             <Input type="text" labelPlacement="outside" label="Contact" description="telephone number" onValueChange={setTel} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Email" description="email address" onValueChange={setEmail} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Ministry" description="ministry" onValueChange={setMinistry} radius="sm"  variant="underlined" isRequired />
-            <Input type="text" labelPlacement="outside" label="Role" description="role played in ministry" onChange={setRole} radius="sm"  variant="underlined" isRequired />
-            <DateInput label="DOB" description="date of birth" className="pt-6" radius="sm" isRequired validate={true} />
+            <Input type="text" labelPlacement="outside" label="Role" description="role played in ministry" onValueChange={setRole} radius="sm"  variant="underlined" isRequired />
+            <DateInput label="DOB" description="date of birth" className="pt-6" radius="sm" isRequired validate={true} onChange={setDob} />
             <Input type="text" labelPlacement="outside" label="Education" description="highest level" onValueChange={setEduc} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Occupation" description="work field" onValueChange={setOccupation} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Where" description="work location" onValueChange={setWhere} radius="sm"  variant="underlined" isRequired />

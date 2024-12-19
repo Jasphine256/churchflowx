@@ -75,7 +75,7 @@ export default function ProjectForm() {
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
             <Input type="text" labelPlacement="outside" label="Title" description="name the project" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
-            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the projecct" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
+            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the projecct" value={description} onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
             <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onValueChange={setHandler} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Budget" description="expense for project execution" onValueChange={setBudget} radius="sm" isRequired />
             <DateInput label="Start Date" description="project started on" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
