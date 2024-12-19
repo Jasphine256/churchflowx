@@ -3,12 +3,11 @@
 import {CardBody, Card, CardFooter, CardHeader} from "@nextui-org/card"
 import {Input, Textarea} from "@nextui-org/input"
 import {Radio, RadioGroup} from "@nextui-org/radio"
-import {DatePicker} from "@nextui-org/date-picker"
+import {DateInput} from "@nextui-org/date-input"
 import {Button} from "@nextui-org/button"
 
 import * as React from "react"
 import { useSession } from "next-auth/react";
-
 
 export default function TaskForm() {
 
@@ -33,10 +32,6 @@ export default function TaskForm() {
         DateDue: `${dateDue.day}-${dateDue.month}-${dateDue.year}`,
         Status: status,
       };
-    
-      console.log(new_task);
-      console.log(JSON.stringify(new_task));
-    
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -46,21 +41,11 @@ export default function TaskForm() {
           },
           body: JSON.stringify(new_task),
         });
-    
-        console.log("REQUEST SENT .................");
-    
         if (response.status !== 201) {
-          console.error(`HTTP Error: ${response.status}`);
-          console.log(await response.text()); // Log server response for debugging
           alert("Error saving task data");
-          return;
         }
-    
-        const responseData = await response.json();
-        console.log(responseData);
         alert("Task successfully added!");
       } catch (error) {
-        console.error("Error saving task data:", error);
         alert("Error saving task data");
       }
     }
@@ -87,11 +72,11 @@ export default function TaskForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Title" description="name the task" onChange={setTitle} radius="sm"  variant="underlined" isRequired />
-            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the task" onChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
-            <DatePicker label="Start Date" description="task assigned on ?" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
-            <DatePicker label="Date Due" description="task finished by ?" onChange={setDateDue} className="pt-6" radius="sm" isRequired validate={true} />
-            <RadioGroup label={"Set Status"} value={status} onChange={setStatus} className="pt-3">
+            <Input type="text" labelPlacement="outside" label="Title" description="name the task" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
+            <Textarea type="text" labelPlacement="inside" label="Description" description="describe the task" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
+            <DateInput label="Start Date" description="task assigned on ?" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
+            <DateInput label="Date Due" description="task finished by ?" onChange={setDateDue} className="pt-6" radius="sm" isRequired validate={true} />
+            <RadioGroup label={"Set Status"} value={status} onValueChange={setStatus} className="pt-3">
                 <Radio value={"finished"} description="the task is completed" color="success">Finished</Radio>
                 <Radio value={"pending"} description="the task is in execution" color="primary">Pending</Radio>
             </RadioGroup>

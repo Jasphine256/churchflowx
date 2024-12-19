@@ -1,7 +1,7 @@
 "use client"
 import {CardBody, Card, CardFooter, CardHeader} from "@nextui-org/card"
 import {Input, Textarea} from "@nextui-org/input"
-import {DatePicker} from "@nextui-org/date-picker"
+import {DateInput} from "@nextui-org/date-input"
 import {Button} from "@nextui-org/button"
 
 import { useSession } from "next-auth/react"
@@ -32,10 +32,6 @@ export default function ProjectForm() {
         StartDate: `${startDate.day}-${startDate.month}-${startDate.year}`,
         EndDate: `${endDate.day}-${endDate.month}-${endDate.year}`,
       };
-    
-      console.log(new_project);
-      console.log(JSON.stringify(new_project));
-    
       try {
         const response = await fetch(url, {
           method: "POST",
@@ -45,21 +41,11 @@ export default function ProjectForm() {
           },
           body: JSON.stringify(new_project),
         });
-    
-        console.log("REQUEST SENT .................");
-    
         if (response.status !== 201) {
-          console.error(`HTTP Error: ${response.status}`);
-          console.log(await response.text()); // Log server response for debugging
           alert("Error saving project data");
-          return;
         }
-    
-        const responseData = await response.json();
-        console.log(responseData);
         alert("Project successfully added!");
       } catch (error) {
-        console.error("Error saving project data:", error);
         alert("Error saving project data");
       }
     }
@@ -88,12 +74,12 @@ export default function ProjectForm() {
     <Card isBlurred={true} className="w-full lg:w-1/2 flex flex-col gap-4 p-1 lg:p-4 lg:py-2 m-auto">
         <CardHeader>{HeaderMessage}</CardHeader>
         <CardBody>
-            <Input type="text" labelPlacement="outside" label="Title" description="name the project" onChange={setTitle} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Title" description="name the project" onValueChange={setTitle} radius="sm"  variant="underlined" isRequired />
             <Textarea type="text" labelPlacement="inside" label="Description" description="describe the projecct" onValueChange={setDescription} radius="sm" isRequired isClearable={true} className="pt-3"/>
-            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onChange={setHandler} radius="sm"  variant="underlined" isRequired />
+            <Input type="text" labelPlacement="outside" label="Handler" description="person in charge" onValueChange={setHandler} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Budget" description="expense for project execution" onValueChange={setBudget} radius="sm" isRequired />
-            <DatePicker label="Start Date" description="project started on" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
-            <DatePicker label="End Date" description="project ended on (optional)" onChange={setEndDate} className="pt-6" radius="sm" validate={true} />
+            <DateInput label="Start Date" description="project started on" onChange={setStartDate} className="pt-6" radius="sm" isRequired validate={true} />
+            <DateInput label="End Date" description="project ended on (optional)" onChange={setEndDate} className="pt-6" radius="sm" validate={true} />
         </CardBody>
         <CardFooter>
             <Button color="primary" fullWidth radius="sm" onPress={validateAndSubmit}>Save Project</Button>
