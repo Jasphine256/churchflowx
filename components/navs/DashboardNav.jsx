@@ -24,7 +24,7 @@ export default function DashboardNav() {
             url: "/dashboard/people",
         },
         {
-            item: "Collections",
+            item: "Activities",
             url: "/dashboard/collections",
         },
         {
@@ -62,7 +62,7 @@ export default function DashboardNav() {
             <Link href="/dashboard/people" isBlock color="foreground">People</Link>
         </NavbarItem>
         <NavbarItem>
-            <Link href="/dashboard/collections" isBlock color="foreground">Collections</Link>
+            <Link href="/dashboard/collections" isBlock color="foreground">Activities</Link>
         </NavbarItem>
         <NavbarItem>
             <Link href="/dashboard/finance" isBlock color="foreground">Finance</Link>
