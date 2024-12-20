@@ -1,8 +1,10 @@
 'use client'
-import {Card, CardBody, CardHeader} from "@nextui-org/card"
-import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure} from "@nextui-org/modal"
-import {Button} from "@nextui-org/button"
-import {Tabs, Tab} from "@nextui-org/tabs"
+import {
+  Tabs, Tab,
+  Card, CardBody, CardHeader,
+  Button,
+  Modal, ModalHeader, ModalFooter, ModalContent, ModalBody, useDisclosure
+} from "@nextui-org/react";
 
 import MembersList from "@components/lists/MembersList"
 import MinistersList from "@components/lists/MinistersList"
@@ -13,8 +15,6 @@ import MemberForm from "@components/forms/MemberForm"
 import MinisterForm from "@components/forms/MinisterForm"
 import PastorForm from "@components/forms/PastorForm"
 import VisitorForm from "@components/forms/VisitorForm"
-
-import { useSession } from "@node_modules/next-auth/react";
 
 export default function PeopleTabs() {
 
@@ -40,8 +40,6 @@ export default function PeopleTabs() {
       content: (<PastorsList/>)
     }
   ];
-
-  const {user} = useSession()
    
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 

@@ -7,8 +7,10 @@ import {
 } from "@nextui-org/react";
 
 import * as React from "react"
+
 import PaymentForm from "@components/forms/PaymentForm"
 import FundForm from "@components/forms/FundForm"
+
 import PaymentList from "@components/lists/PaymentsList"
 import FundList from "@components/lists/FundsList"
 
@@ -16,12 +18,12 @@ export default function FinanceTabs() {
 
   let tabs = [
     {
-      id: "fund",
+      id: "fund-form",
       label: "Funds",
       content: (<FundList/>)
     },
     {
-      id: "payment",
+      id: "payment-form",
       label: "Payments",
       content: (<PaymentList/>)
     },
@@ -39,10 +41,10 @@ export default function FinanceTabs() {
                 <ModalHeader className="flex flex-col gap-1">Add new record</ModalHeader>
                 <ModalBody>
                 <Tabs radius="full" color="warning">
-                  <Tab key={'payment-form'} title="Payment">
+                  <Tab key={'payments'} title="Payment">
                     <PaymentForm/>
                   </Tab>  
-                  <Tab key={'fund-form'} title="Fund">
+                  <Tab key={'funds'} title="Fund">
                     <FundForm/>
                   </Tab>
                 </Tabs>

@@ -87,7 +87,7 @@ export default function MinisterForm() {
         isRequired
       />
       <DateInput
-        name="DOB"
+        name="Dob"
         label="Date of Birth"
         description="Enter your date of birth"
         radius="sm"

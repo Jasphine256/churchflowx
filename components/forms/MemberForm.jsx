@@ -14,7 +14,7 @@ export default function MemberForm() {
       const formData = new FormData(event.target);
       const data = Object.fromEntries(formData);
       console.log("Form Data:", data);
-      SubmitProjectData(data)
+      SubmitMemberData(data)
     };
     
     async function SubmitMemberData(formData) {
@@ -68,7 +68,7 @@ export default function MemberForm() {
           isRequired
         />
         <DateInput
-          name="DOB"
+          name="Dob"
           label="Date of Birth"
           description="Enter your date of birth"
           radius="sm"
