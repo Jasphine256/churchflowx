@@ -102,10 +102,12 @@ export default function ProjectForm() {
         radius="sm"
         isRequired
       />
-      <Button type="reset" variant="flat">Clear</Button>
-      <Button color="primary" fullWidth radius="sm" type="submit">
-        Submit Project Details
-      </Button>
+      <div className="flex w-full gap-2">
+          <Button type="reset" variant="flat" color="success">Clear</Button>
+          <Button color="primary" fullWidth radius="sm" type="submit">
+            Submit Information
+          </Button>
+        </div>
     </Form>
   );
 }

@@ -194,7 +194,7 @@ export default function PastorForm() {
     />
     <Input
       name="Tel"
-      type="text"
+      type="tel"
       labelPlacement="outside"
       label="Telephone"
       description="Enter your phone number"
@@ -204,7 +204,7 @@ export default function PastorForm() {
     />
     <Input
       name="Email"
-      type="text"
+      type="email"
       labelPlacement="outside"
       label="Email"
       description="Enter your email address"
@@ -272,10 +272,12 @@ export default function PastorForm() {
       variant="underlined"
       isRequired
     />
-    <Button type="reset" variant="flat">Clear</Button>
-    <Button color="primary" fullWidth radius="sm" type="submit">
-      Submit Pastor Details
-    </Button>
+    <div className="flex w-full gap-2">
+          <Button type="reset" variant="flat" color="success">Clear</Button>
+          <Button color="primary" fullWidth radius="sm" type="submit">
+            Submit Information
+          </Button>
+        </div>
   </Form>
   );
 }

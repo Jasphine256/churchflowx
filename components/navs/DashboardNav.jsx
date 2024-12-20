@@ -39,7 +39,7 @@ export default function DashboardNav() {
       
       
   return (
-    <Navbar isBordered={true}>
+    <Navbar isBordered={true} isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
 
         <NavbarContent>
             <NavbarMenuToggle
@@ -106,12 +106,13 @@ export default function DashboardNav() {
       <NavbarMenu>
         {
         menuItems.map((item) => (
-          <NavbarMenuItem key={`${item.item}`} onPress={(prev)=>setIsMenuOpen(!prev)}>
+          <NavbarMenuItem key={`${item.item}`}>
             <Link
               color="foreground"
               className="w-full"
               href={item.url}
               size="lg"
+              onClick={(prev)=>setIsMenuOpen(!prev)}
             >
               {item.item}
             </Link>

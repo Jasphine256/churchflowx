@@ -93,9 +93,12 @@ export default function TaskForm() {
         variant="underlined"
         isRequired
       />
-      <Button color="primary" fullWidth radius="sm" type="submit">
-        Submit Task Details
-      </Button>
+      <div className="flex w-full gap-2">
+          <Button type="reset" variant="flat" color="success">Clear</Button>
+          <Button color="primary" fullWidth radius="sm" type="submit">
+            Submit Information
+          </Button>
+        </div>
     </Form>
   );
 }
