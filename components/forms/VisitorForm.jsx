@@ -1,21 +1,22 @@
+'use client'
 import {Form} from "@nextui-org/form"
 import {Input} from "@nextui-org/input"
 import {Button} from "@nextui-org/button"
 import { useState } from "react"
+import { useSession } from "next-auth/react"
 
 export default function PastorForm() {
-
-    const [formData, setFormData] = useState({})
+    
+    const {data:session} = useSession()
 
     const onSubmit = (event) => {
       event.preventDefault();
       const formData = new FormData(event.target);
       const data = Object.fromEntries(formData);
       console.log("Form Data:", data);
-      setFormData(data)
-      // Add logic to handle form submission
+      SubmitVisitorData(data)
     };
-    async function SubmitVisitorData() {
+    async function SubmitVisitorData(formData) {
       const baseUrl = "https://churchflowx-backend.onrender.com";
       const url = `${baseUrl}/people/visitors/new`;
 

@@ -1,3 +1,4 @@
+'use client'
 import {Form} from "@nextui-org/form"
 import {Input, Textarea} from "@nextui-org/input"
 import {DateInput} from "@nextui-org/date-input"
@@ -8,18 +9,16 @@ import { useSession } from "next-auth/react"
 export default function TaskForm() {
 
   const {data:session} = useSession()
-  const [formData, setFormData] = useState({})
 
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log("Form Data:", data);
-    setFormData(data)
-    // Add logic to handle form submission
+    SubmitTaskData(data)
   };
 
-  async function SubmitTaskData() {
+  async function SubmitTaskData(formData) {
     const baseUrl = "https://churchflowx-backend.onrender.com";
     const url = `${baseUrl}/collections/tasks/new`;
 

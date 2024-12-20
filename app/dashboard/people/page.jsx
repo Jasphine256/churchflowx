@@ -4,10 +4,10 @@ import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure}
 import {Button} from "@nextui-org/button"
 import {Tabs, Tab} from "@nextui-org/tabs"
 
-import MinistersView from "@components/views/MinistersView"
-import PastorsView from "@components/views/PastorsView"
-import VisitorsView from "@components/views/VisitorsView"
-import MembersView from "@components/views/MembersView"
+import MembersList from "@components/lists/MembersList"
+import MinistersList from "@components/lists/MinistersList"
+import PastorsList from "@components/lists/PastorsList"
+import VisitorsList from "@components/lists/VisitorsList"
 
 import MemberForm from "@components/forms/MemberForm"
 import MinisterForm from "@components/forms/MinisterForm"
@@ -22,22 +22,22 @@ export default function PeopleTabs() {
     {
       id: "ministers",
       label: "Ministers",
-      content: (<MinistersView/>)
+      content: (<MinistersList/>)
     },
     {
       id: "members",
       label: "Members",
-      content: (<MembersView/>)
+      content: (<MembersList/>)
     },
     {
       id: "visitors",
       label: "Visitors",
-      content: (<VisitorsView/>)
+      content: (<VisitorsList/>)
     },
     {
       id: "pastors",
       label: "Pastors",
-      content: (<PastorsView/>)
+      content: (<PastorsList/>)
     }
   ];
 

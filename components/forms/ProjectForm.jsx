@@ -3,22 +3,21 @@ import {Form} from "@nextui-org/form"
 import {Input, Textarea} from "@nextui-org/input"
 import {DateInput} from "@nextui-org/date-input"
 import {Button} from "@nextui-org/button"
-import { useState } from "react"
+import { useSession } from "next-auth/react"
 
 export default function ProjectForm() {
 
-  const [formData, setFormData] = useState({})
+  const {data:session} = useSession()
 
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log("Form Data:", data);
-    setFormData(data)
-    // Add logic to handle form submission
+    SubmitProjectData(data)
   };
     
-    async function SubmitProjectData() {
+    async function SubmitProjectData(formData) {
       const baseUrl = "https://churchflowx-backend.onrender.com";
       const url = `${baseUrl}/collections/projects/new`;
     

@@ -1,22 +1,21 @@
 import {Form} from "@nextui-org/form"
 import {Input, Textarea} from "@nextui-org/input"
 import {Button} from "@nextui-org/button"
-import { useState } from "react"
+import { useSession } from "next-auth/react"
 
 export default function PlanForm() {
 
-  const [formData, setFormData] = useState({})
+  const {data:session} = useSession()
 
   const onSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log("Form Data:", data);
-    setFormData(data)
-    // Add logic to handle form submission
+    SubmitPlanData(data)
   };
     
-    async function SubmitPlanData() {
+    async function SubmitPlanData(formData) {
       const baseUrl = "https://churchflowx-backend.onrender.com";
       const url = `${baseUrl}/collections/plans/new`;
     
