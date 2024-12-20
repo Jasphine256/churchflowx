@@ -106,7 +106,7 @@ export default function DashboardNav() {
       <NavbarMenu>
         {
         menuItems.map((item) => (
-          <NavbarMenuItem key={`${item.item}`}>
+          <NavbarMenuItem key={`${item.item}`} onPress={(prev)=>setIsMenuOpen(!prev)}>
             <Link
               color="foreground"
               className="w-full"
