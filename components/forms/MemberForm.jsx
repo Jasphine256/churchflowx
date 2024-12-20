@@ -156,7 +156,6 @@ export default function MemberForm() {
             <Input type="text" labelPlacement="outside" label="Home Parish" description="home parish" onValueChange={setHomeParish} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Home SubCounty" description="home subcounty" onValueChange={setHomeSubCounty} radius="sm"  variant="underlined" isRequired />
             <Input type="text" labelPlacement="outside" label="Home District" description="home district" onValueChange={setHomeDistrict} radius="sm"  variant="underlined" isRequired />
-
         </CardBody>
         <CardFooter>
             <Button color="primary" fullWidth radius="sm" onPress={validateAndSubmit}>Save Member</Button>
