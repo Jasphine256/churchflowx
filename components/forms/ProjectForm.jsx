@@ -102,6 +102,7 @@ export default function ProjectForm() {
         radius="sm"
         isRequired
       />
+      <Button type="reset" variant="flat">Clear</Button>
       <Button color="primary" fullWidth radius="sm" type="submit">
         Submit Project Details
       </Button>

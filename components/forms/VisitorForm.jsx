@@ -87,6 +87,7 @@ export default function PastorForm() {
         variant="underlined"
         isRequired
       />
+      <Button type="reset" variant="flat">Clear</Button>
       <Button color="primary" fullWidth radius="sm" type="submit">
         Submit Visitor Details
       </Button>
