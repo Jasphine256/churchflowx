@@ -1,8 +1,6 @@
-"use client"
+import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
-import {Card, CardHeader, CardBody, Image, Link} from "@nextui-org/react";
-
-export default function Feature({name, subtitle, url, icon}) {
+export default function Feature({name, subtitle, icon}) {
   return (
     <Card className="py-4">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -15,6 +13,7 @@ export default function Feature({name, subtitle, url, icon}) {
           className="object-cover rounded-xl"
           src={icon}
           width={270}
+          height={270}
           loading="eager"
         />
       </CardBody>

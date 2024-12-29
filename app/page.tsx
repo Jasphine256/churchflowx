@@ -2,6 +2,7 @@
 
 import NavBar from "@components/navs/NavBar"
 import Feature from "@components/widgets/Feature"
+import IntroText from "@components/widgets/IntroText"
 import { Button } from "@nextui-org/button"
 import Link from "next/link"
 
@@ -39,10 +40,7 @@ const Home = () => {
     <>
       <NavBar/>
       <section className="w-full flex flex-col items-center justify-center p-10 py-4 ">
-        <h1 className="text-4xl font-bold p-3">The Free Ultimate Church Management System</h1>
-        <h1 className="text-4xl font-bold p-3">Simplifying God's work</h1>
-        <h3 className="text-lg p-1">Managing Plans, Projects, Staff, Finances, scheduling tasks</h3>
-        <h3 className="text-lg p-1 mb-5">backed up database, broadcast messages and lots more</h3>
+        <IntroText/>
         {
           session?.user ? (
             <Button  as={Link} href="/dashboard/people" color="primary" radius="full" variant="bordered">{"Go To Dashboard >>> "}</Button>
@@ -56,7 +54,7 @@ const Home = () => {
         {
           features.map((feature)=>(
             <div className="min-w-[280px] w-full lg:w-1/4 m-2" key={feature.name}>
-              <Feature name={feature.name} subtitle={feature.subtitle} url={feature.url} icon={feature.icon}/>
+              <Feature name={feature.name} subtitle={feature.subtitle} icon={feature.icon}/>
             </div>
           ))
         }

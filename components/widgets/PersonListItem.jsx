@@ -1,6 +1,4 @@
-"use client"
-
-import { Card, CardHeader, CardBody, Avatar, Snippet } from "@nextui-org/react";
+import { Card, CardBody, Avatar, Snippet } from "@nextui-org/react";
 import Link from "next/link";
 
 export default function PersonListItem({person}){
