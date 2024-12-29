@@ -14,25 +14,25 @@ const Home = () => {
       name: 'Secure Access',
       subtitle: "Securely access your data anywhere",
       url: '/features#broadcast-info',
-      icon: '/assets/images/access.jpg',
+      icon: '/assets/images/access.webp',
     },
     {
       name: 'Databases',
       subtitle: "simply store and manage church information",
       url: '/features#databases-info',
-      icon: '/assets/images/database.jpg',
+      icon: '/assets/images/database.webp',
     },
     {
       name: 'Project Management',
       subtitle: "assign tasks, manage plans and projects",
       url: '/features#projects-info',
-      icon: '/assets/images/projects.jpg',
+      icon: '/assets/images/projects.webp',
     },
     {
       name: 'Finance',
       subtitle: "store and manage financial records",
       url: '/features#finances-info',
-      icon: '/assets/images/finance.jpg',
+      icon: '/assets/images/finance.webp',
     },
   ]
   return (

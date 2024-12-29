@@ -18,7 +18,7 @@ export default function FundForm() {
   };
 
   async function SubmitData(formData) {
-      const baseUrl = "https://churchflowx-backend.onrender.com";
+      const baseUrl = "https://curly-dorena-jasphine256-0ed14c51.koyeb.app";
       const url = `${baseUrl}/${"finance/funds/new"}`;
 
       try {
