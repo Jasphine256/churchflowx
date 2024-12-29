@@ -15,6 +15,7 @@ export default function Feature({name, subtitle, url, icon}) {
           className="object-cover rounded-xl"
           src={icon}
           width={270}
+          loading="eager"
         />
       </CardBody>
     </Card>
