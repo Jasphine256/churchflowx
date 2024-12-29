@@ -45,7 +45,7 @@ export default function PastorsList() {
       <Listbox items={pastors} aria-label="Dynamic Actions">
         {(person) => (
           <ListboxItem key={person.ID} variant="light">
-            <PersonListItem person={person} />
+            <PersonListItem person={person} type="pastors"/>
             <Divider />
           </ListboxItem>
         )}
