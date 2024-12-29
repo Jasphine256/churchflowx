@@ -1,7 +1,7 @@
 'use client'
 import FundWidget from "../widgets/FundWidget"
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react"
-import { useSession } from "@node_modules/next-auth/react"
+import { useSession } from "next-auth/react"
 import { useState, useEffect } from "react";
 
 export default function FundsList() {

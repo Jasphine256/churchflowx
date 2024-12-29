@@ -12,7 +12,7 @@ export default function PersonListItem({person}){
                 <div className="w-full flex flex-row justify-start items-center">
                     <Avatar name={person.Gender} color={person.Gender === "M" ? "success": "warning" } className="text-white font-bold text-large"/>
                     <div className="w-full flex flex-row justify-between items-baseline ml-4">
-                        <Link href={`/dashboard/people/person/${person.ID}`} className="text-medium font-medium">{person.Name}</Link>
+                        <Link href={`/dashboard/people/members/${person.ID}`} className="text-medium font-medium">{person.Name}</Link>
                         <Snippet size="sm" symbol="" color="primary" codeString={person.Tel}>
                             <p className="text-[10px]">{person.Tel}</p>
                         </Snippet>
